@@ -1,0 +1,17 @@
+#Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+#Django 
+db.sqlite3
+staticfiles/
+
+#Secrets
+.env.*
+*.pem
+*.key
+
+#OS 
+.ds_store
