@@ -14,5 +14,8 @@ staticfiles/
 *.pem
 *.key
 
+/static 
+static/
+
 #OS 
 .ds_store
