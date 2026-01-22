@@ -1,97 +1,34 @@
+{% extends "marketplace\base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ClearSpace Local</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-        }
+{% block extra_head %}
+<style>
+  .hero {
+    background-image: url("{% static 'images/temp_picture.jpg' %}");
+  }
+</style>
+{% endblock %} 
 
-        /* Header Image */
-        .hero {
-            width: 100%;
-            height: 33vh; /* top third of screen */
-            background-image: url("{% static 'images/temp_picture.jpg' %}");
-            background-size: cover;
-            background-position: center 10%;
-        }
+{% block title %}ClearSpace Local{% endblock %}
 
-        /* Navbar */
-        .navbar {
-            background-color: #7b1e1e; /* maroon */
-            padding: 12px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
+{% block content %}
+  <div class="hero"></div>
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
+  <nav class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <a href="#">Servicers Portal</a>
+  </nav>
 
-        .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Mission Statement */
-        .mission-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .mission-container h2 {
-            margin-top: 0;
-            font-size: 28px;
-        }
-
-        .mission-container p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Hero Image -->
-    <div class="hero"></div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Cities</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <!-- Mission Statement -->
-    <section class="mission-container">
-        <h2>Connecting Communities with Trusted Local Services</h2>
-        <p>
-            At ClearSpace Local, our mission is to make finding reliable local
-            service professionals simple, transparent, and stress-free.
-            We help homeowners connect with trusted experts in their community,
-            so projects get done right — the first time.
-        </p>
-    </section>
-
-</body>
-</html> 
+  <section class="mission-container">
+    <h2>Connecting Communities with Trusted Local Services</h2>
+    <p>
+      At ClearSpace Local, our mission is to make finding reliable local
+      service professionals simple, transparent, and stress-free.
+      We help homeowners connect with trusted experts in their community,
+      so projects get done right — the first time.
+    </p>
+  </section>
+{% endblock %} 
