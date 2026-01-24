@@ -61,7 +61,7 @@ main {
   width: 95vw;
   height: 15vh;
   background-size: cover;
-  background-position: center 35%;
+  background-position: top 40%;
   margin-top: 8px;
   border-radius: 5px;
   overflow: hidden;
