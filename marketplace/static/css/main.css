@@ -70,7 +70,7 @@ main {
 /* ========== Tablet & Desktop ========== */
 @media (min-width: 768px) {
   .hero {
-    height: 33vh;
+    height: 5vh;
     background-position: center 15%;
     margin-top: 12px;
     border-radius: 15px;
