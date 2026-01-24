@@ -80,7 +80,7 @@ main {
 /* ========== Large Desktop (Optional) ========== */
 @media (min-width: 1200px) {
   .hero {
-    height: 40vh;
+    height: 4vh;
     /* max-width: 1200px; */
     margin-left: auto;
     margin-right: auto; 
