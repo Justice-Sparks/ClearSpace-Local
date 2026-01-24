@@ -59,7 +59,7 @@ main {
 /* =================== HERO SECTION (Mobile First) ================== */
 .hero {
   width: 95vw;
-  height: 5vh;
+  height: 30vh;
   background-size: cover;
   background-position: center 35%;
   margin-top: 8px;
@@ -70,7 +70,7 @@ main {
 /* ========== Tablet & Desktop ========== */
 @media (min-width: 768px) {
   .hero {
-    height: 5vh;
+    height: 35vh;
     background-position: center 15%;
     margin-top: 12px;
     border-radius: 15px;
@@ -80,7 +80,7 @@ main {
 /* ========== Large Desktop (Optional) ========== */
 @media (min-width: 1200px) {
   .hero {
-    height: 4vh;
+    height: 40vh;
     /* max-width: 1200px; */
     margin-left: auto;
     margin-right: auto; 
@@ -111,11 +111,8 @@ main {
   color: #555;
 }
 
-/* ========== MOBILE TWEAKS ========== */
+/* ========== MOBILE TWEAKS FOR MISSION CONTAINER ========== */
 @media (max-width: 480px) {
-  .hero {
-    height: 28vh;
-  }
 
   .mission-container {
     margin: 20px auto;
