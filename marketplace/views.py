@@ -10,4 +10,4 @@ def homepage(request):
         "categories" : categories, 
     }
 
-    return render(request, "marketplace/homepage.html", context)
+    return render(request, "homepage.html", context)
