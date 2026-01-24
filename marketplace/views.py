@@ -11,3 +11,5 @@ def homepage(request):
     }
 
     return render(request, "homepage.html", context)
+
+
