@@ -59,9 +59,9 @@ main {
 /* =================== HERO SECTION (Mobile First) ================== */
 .hero {
   width: 95vw;
-  height: 28vh;
+  height: 30vh;
   background-size: cover;
-  background-position: center 20%;
+  background-position: center 35%;
   margin-top: 8px;
   border-radius: 5px;
   overflow: hidden;
@@ -71,7 +71,7 @@ main {
 @media (min-width: 768px) {
   .hero {
     height: 33vh;
-    background-position: center 10%;
+    background-position: center 15%;
     margin-top: 12px;
     border-radius: 15px;
   }
