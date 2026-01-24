@@ -59,7 +59,7 @@ main {
 /* =================== HERO SECTION (Mobile First) ================== */
 .hero {
   width: 95vw;
-  height: 30vh;
+  height: 15vh;
   background-size: cover;
   background-position: center 35%;
   margin-top: 8px;
