@@ -1,34 +1,44 @@
  /* ========== GLOBAL STYLES ========== */
-body {
+ html, body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f7f7;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', system-ui, sans-serif;
+  background-color: #fefae0;
   color: #333;
 }
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+} 
 
 /* Content wrapper */
 main {
   padding: 0 12px;
 }
 
-
 /*====================================================================*/
 /* ======================= NAVBAR (mobile-first) ==================== */
  .navbar{
   display: flex;
+  /* width: 50vw; */
   gap: 10px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;                 /* mobile friendly */
+  /* flex-wrap: wrap;      <--- mobile friendly */
   padding: 10px 12px;
-  background: #7b1e1e;
-  border-radius: 12px;
+  background: #283618;
+  /* border-radius: 12px; */
 
-   /* Size & position (MOBILE DEFAULT) */
-  width: calc(100% - 24px);   /* full-width with breathing room */
-  margin: 12px auto 0;        /* centers the navbar box */
+  /* Size & position (MOBILE DEFAULT) */
+  /* width: calc(100% - 24px);   full-width with breathing room */
+  /* margin: 12px auto 0;        centers the navbar box */
+  /* margin-bottom: 12px ; */
 }
 
+/* Links within each nav-item*/
 .nav-link{
   color: white;
   text-decoration: none;
@@ -37,7 +47,7 @@ main {
   display: inline-block;
 }
 
-/* <details> reset */
+/* Container for each link */
 .nav-item{
   color: white;
   position: relative;
@@ -89,9 +99,6 @@ main {
     display: block;
   }
 
-  .navbar {
-    width: 50vw;
-  }
 } 
 
 
@@ -99,13 +106,13 @@ main {
 /*====================================================================*/
 /* =================== HERO SECTION (Mobile First) ================== */
 .hero {
-  width: 95vw;
+  width: 100vw;
   height: 15vh;
   background-size: cover;
   background-position: top 40%;
-  margin-top: 8px;
-  border-radius: 5px;
-  overflow: hidden;
+  /* margin-top: 8px; */
+  /* border-radius: 5px;
+  overflow: hidden; */
 }
 
 /* ========== Tablet & Desktop ========== */
@@ -113,8 +120,8 @@ main {
   .hero {
     height: 35vh;
     background-position: center 15%;
-    margin-top: 12px;
-    border-radius: 15px;
+    /* margin-top: 12px; */
+    /* border-radius: 15px; */ 
   }
 }
 
@@ -123,8 +130,8 @@ main {
   .hero {
     height: 40vh;
     /* max-width: 1200px; */
-    margin-left: auto;
-    margin-right: auto; 
+    /* margin-left: auto;
+    margin-right: auto;  */
   }
 } 
 
@@ -152,7 +159,7 @@ main {
   color: #555;
 }
 
-/* ========== MOBILE TWEAKS FOR MISSION CONTAINER ========== */
+/* ==== MOBILE TWEAKS FOR MISSION CONTAINER ===== */
 @media (max-width: 480px) {
 
   .mission-container {
@@ -166,5 +173,60 @@ main {
 
   .mission-container p {
     font-size: 16px;
+  }
+} 
+
+
+
+
+/*====================================================================*/
+/* ========================= PAGE TITLES ========================= */
+ /* Page Title Container */
+.page-title {
+  width: calc(100% - 24px);      /* Mobile-friendly spacing */
+  height: 30px;
+  margin: 16px auto 0;           /* Centered, near top */
+  padding: 4px 8px;
+
+  background-color: #606c38;
+  border-radius: 14px;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title text */
+.page-title h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: white ;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .page-title {
+    width: 80%;
+    padding: 20px 28px;
+  }
+
+  .page-title h1 {
+    font-size: 1.9rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .page-title {
+    width: 60%;
+    max-width: 900px;
+  }
+
+  .page-title h1 {
+    font-size: 2.2rem;
   }
 } 

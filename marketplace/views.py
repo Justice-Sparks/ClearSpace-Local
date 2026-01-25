@@ -13,3 +13,6 @@ def homepage(request):
     return render(request, "homepage.html", context)
 
 
+def cleaning(request):
+
+    return render(request, "residentialcleaning.html")
