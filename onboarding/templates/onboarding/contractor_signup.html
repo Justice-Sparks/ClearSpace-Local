@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_head %}
+<style>
+  .hero {
+    background-image: url("{% static 'images/temp_picture.jpg' %}");
+  }
+</style>
+{% endblock %} 
+
+{% block content %}
+  <main style="max-width: 720px; margin: 24px auto; padding: 0 16px;">
+    <h1>Partner With ClearSpace Local</h1>
+    <p>Fill this out and we’ll reach out with next steps.</p>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div style="padding:12px;border:1px solid #c00;margin-bottom:12px;">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <!-- Basic fields -->
+      <div style="margin-bottom:16px;">
+        {{ form.business_name.label_tag }}
+        {{ form.business_name }}
+        {{ form.business_name.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.contact_name.label_tag }}
+        {{ form.contact_name }}
+        {{ form.contact_name.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.phone.label_tag }}
+        {{ form.phone }}
+        {{ form.phone.errors }}
+      </div>
+
+      <!-- Service categories + "Other" -->
+      <div style="margin-bottom:16px;">
+        <div style="font-weight:600;margin-bottom:6px;">
+          {{ form.service_categories.label }}
+        </div>
+        {{ form.service_categories }}
+        {% if form.service_categories.errors %}
+          <div style="color:#c00; margin-top:6px;">
+            {{ form.service_categories.errors }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div id="other-category-wrapper" style="display:none; margin-bottom:16px;">
+        <label style="display:block;font-weight:600;margin-bottom:6px;" for="{{ form.other_service_category.id_for_label }}">
+          {{ form.other_service_category.label }}
+        </label>
+        {{ form.other_service_category }}
+        {% if form.other_service_category.errors %}
+          <div style="color:#c00; margin-top:6px;">
+            {{ form.other_service_category.errors }}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Remaining fields -->
+      <div style="margin-bottom:16px;">
+        {{ form.service_area.label_tag }}
+        {{ form.service_area }}
+        {% if form.service_area.help_text %}
+          <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 4px;">
+            {{ form.service_area.help_text }}
+          </div>
+        {% endif %}
+        {{ form.service_area.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.licensed_and_insured }}
+        <label for="{{ form.licensed_and_insured.id_for_label }}">
+          {{ form.licensed_and_insured.label }}
+        </label>
+        {{ form.licensed_and_insured.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.license_insurance_notes.label_tag }}
+        {{ form.license_insurance_notes }}
+        {{ form.license_insurance_notes.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.best_time_to_contact.label_tag }}
+        {{ form.best_time_to_contact }}
+        {{ form.best_time_to_contact.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.website_url.label_tag }}
+        {{ form.website_url }}
+        {{ form.website_url.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.years_in_business.label_tag }}
+        {{ form.years_in_business }}
+        {{ form.years_in_business.errors }}
+      </div>
+
+      <div style="margin-bottom:16px;">
+        {{ form.notes.label_tag }}
+        {{ form.notes }}
+        {{ form.notes.errors }}
+      </div>
+
+      <button type="submit" style="padding:12px 16px; font-weight:600;">
+        Submit request
+      </button>
+    </form>
+  </main>
+
+{% endblock %}
+
+  <script>
+    function toggleOtherCategory() {
+      const checkboxes = document.querySelectorAll('input[name="service_categories"]');
+      const otherWrapper = document.getElementById("other-category-wrapper");
+
+      let otherChecked = false;
+      checkboxes.forEach(cb => {
+        if (cb.value === "Other" && cb.checked) {
+          otherChecked = true;
+        }
+      });
+
+      otherWrapper.style.display = otherChecked ? "block" : "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const checkboxes = document.querySelectorAll('input[name="service_categories"]');
+
+      checkboxes.forEach(cb => {
+        cb.addEventListener("change", toggleOtherCategory);
+      });
+
+      // Run once on page load (important for validation errors)
+      toggleOtherCategory();
+    });
+  </script>
+</body>
+</html> 

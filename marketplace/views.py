@@ -13,6 +13,15 @@ def homepage(request):
     return render(request, "homepage.html", context)
 
 
-def cleaning(request):
+def about(request):
+    return render(request, "about.html")
 
+def contact(request):
+    return render(request, "contact.html")
+
+def cleaning(request):
     return render(request, "residentialcleaning.html")
+
+def contractorportal(request):
+    return render(request, "contractorportal.html")
+

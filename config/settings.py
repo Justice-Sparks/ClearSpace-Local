@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Custom Apps
     'marketplace',
+    'onboarding',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,26 @@ STATICFILES_DIRS = [
 # Example: CSRF_TRUSTED_ORIGINS=https://your-domain.com
 _csrf = os.getenv("CSRF_TRUSTED_ORIGINS", "")
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in _csrf.split(",") if o.strip()] 
+
+
+# EMAIL SETTINGS-------------------------------------------------------------------------------|
+
+# Who the notification emails should go to
+CONTRACTOR_SIGNUP_NOTIFY_EMAILS = [
+    os.environ.get("CONTRACTOR_NOTIFY_EMAIL_1", ""),  # ! CHANGE EMAIL TO GOOGLE WORKSPACE EMAILS IN .ENV FILE 
+    #os.environ.get("CONTRACTOR_NOTIFY_EMAIL_2", ""),
+]
+# Remove any blanks in case env vars weren't set
+CONTRACTOR_SIGNUP_NOTIFY_EMAILS = [e for e in CONTRACTOR_SIGNUP_NOTIFY_EMAILS if e]
+
+# Email config (Google Workspace SMTP)
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# ! setup host email in google workspace and assign in (.env file for local) (systemd file on EC2)
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")  
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")  # app password recommended
+
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER) 
