@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_head %}
+<style>
+  .hero {
+    background-image: url("{% static 'images/temp_picture.jpg' %}");
+  }
+</style>
+{% endblock %} 
+
+
+{% block content %}
+  <main style="max-width: 720px; margin: 24px auto; padding: 0 16px;">
+    <h1>LOGIN PAGE</h1>
+    <a href="{% url 'contractor_signup'%}" class = "btn">
+      Contractor Onboarding Request
+    </a>
+  </main>
+{% endblock %}
