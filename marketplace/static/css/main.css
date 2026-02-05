@@ -222,11 +222,94 @@ main {
 /* Desktop */
 @media (min-width: 1200px) {
   .page-title {
-    width: 60%;
+    width: 30%;
     max-width: 900px;
   }
 
   .page-title h1 {
     font-size: 2.2rem;
   }
+} 
+
+/*====================================================================*/
+/* ========================= BUTTONS ========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Mobile tap target */
+  min-height: 44px;
+
+  /* Mobile-first sizing */
+  padding: 12px 18px;
+  font-size: 16px;
+  line-height: 1;
+
+  background: #7b1e1e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 400;
+
+  /* Helps long text not look cramped */
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: #5f1515;
+}
+
+/* Optional: full-width buttons on small screens */
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Slightly larger / tighter look on bigger screens */
+@media (min-width: 900px) {
+  .btn {
+    padding: 5px 19px;
+    font-size: 15px;
+  }
+}
+
+
+
+/*====================================================================*/
+/* ========================= FORMS ========================= */
+/* Page width wrapper (replaces inline styles) */
+.form-page-width {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/*Page Title class is defined somewhere above*/
+
+/* Subtitle inside container */
+.page-subtitle {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #030101;
+}
+
+/* FORM CONTAINER */
+.form-container {
+    background-color: #DDA15E;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Improve spacing between form fields */
+.form-container form > * + * {
+    margin-top: 12px;
+} 
+
+ @media (min-width: 768px) {
+    .form-container {
+        padding: 28px 32px;
+    }
 } 

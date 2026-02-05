@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Custom Apps
     'marketplace',
     'onboarding',
+    'contractorportal',
 ]
 
 MIDDLEWARE = [
