@@ -111,7 +111,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Where collectstatic outputs (needed for Nginx in prod)
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # For local dev only (optional). In production, you can keep this, it won’t break anything.
 STATICFILES_DIRS = [

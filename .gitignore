@@ -16,3 +16,7 @@ staticfiles/
 
 #OS 
 .ds_store
+
+#Ignoring static files at root directory (build outputs) not ignoring static files in the apps (css & images)
+/static/
+/staticfiles/
