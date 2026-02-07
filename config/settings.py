@@ -52,6 +52,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        'DIRS':[BASE_DIR / "templates"],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -140,8 +141,16 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-# ! setup host email in google workspace and assign in (.env file for local) (systemd file on EC2)
+# I setup the host email in google workspace and assigned it in (.env file for local) (systemd file on EC2)
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")  
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")  # app password recommended
 
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER) 
+
+
+#--------------- Contractor Portal Users Stuff ------------------------------------------------
+AUTH_USER_MODEL = "contractorportal.User"
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "contractor_dashboard"
+LOGOUT_REDIRECT_URL = "homepage"  
