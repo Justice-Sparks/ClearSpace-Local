@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_head %}
+<style>
+  .hero {
+    background-image: url("{% static 'images/temp_picture.jpg' %}");
+  }
+</style>
+{% endblock %} 
+
+{% block content %}
+
+<h1>Contractor Portal</h1>
+<p>You’re logged in.</p> 
+
+{% endblock %}

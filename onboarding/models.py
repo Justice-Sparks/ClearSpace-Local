@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -33,6 +34,14 @@ class ContractorSignupRequest(models.Model):
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.NEW)
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="signup_request",
+    ) 
 
     def __str__(self) -> str:
         return f"{self.business_name} ({self.contact_name}) - {self.created_at:%Y-%m-%d}" 
