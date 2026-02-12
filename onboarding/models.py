@@ -35,6 +35,7 @@ class ContractorSignupRequest(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # Nullable USer Foreign Key to link signup requests to created users
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         null=True,
