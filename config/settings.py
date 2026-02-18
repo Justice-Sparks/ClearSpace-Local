@@ -33,7 +33,13 @@ INSTALLED_APPS = [
     'marketplace',
     'onboarding',
     'contractorportal',
+    'django_recaptcha',
 ]
+
+RECAPTCHA_PUBLIC_KEY = '6LeaInAsAAAAAFvZWxjD-xf3vm-_Xs-0I6-nAie5'
+RECAPTCHA_SECRET_KEY = '6LeaInAsAAAAAC7OmS_YHZPtlmqd-quqnyi7cqD8'
+
+SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
