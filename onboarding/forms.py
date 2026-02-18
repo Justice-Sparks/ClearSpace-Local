@@ -1,5 +1,7 @@
 from django import forms
 from .models import ContractorSignupRequest
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV3
 
 
 SERVICE_CATEGORY_CHOICES = [
@@ -76,3 +78,5 @@ class ContractorSignupRequestForm(forms.ModelForm):
 
         cleaned["service_categories"] = categories
         return cleaned 
+    
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
