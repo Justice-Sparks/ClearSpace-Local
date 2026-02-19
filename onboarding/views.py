@@ -2,15 +2,21 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods
-
+from django_ratelimit.decorators import ratelimit
 from .forms import ContractorSignupRequestForm
 
-
+@ratelimit(key="ip", rate="5/m", method="POST", block=True)
 @require_http_methods(["GET", "POST"])
 def contractor_signup_request(request):
     if request.method == "POST":
         form = ContractorSignupRequestForm(request.POST)
+        
         if form.is_valid():
+            
+            # Honeypot check — bots fill this in, humans never see it
+            if form.cleaned_data.get("company_fax"):
+                return redirect("contractor_signup_thanks")  # Silently discard
+            
             obj = form.save()
 
             subject = f"New Contractor Signup Request: {obj.business_name}"

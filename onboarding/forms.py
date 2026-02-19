@@ -79,4 +79,5 @@ class ContractorSignupRequestForm(forms.ModelForm):
         cleaned["service_categories"] = categories
         return cleaned 
     
-    captcha = ReCaptchaField(widget=ReCaptchaV3)
+    company_fax = forms.CharField(required=False, widget=forms.HiddenInput) # Honey Pot 
+    captcha = ReCaptchaField(widget=ReCaptchaV3) 
