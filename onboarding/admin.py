@@ -32,7 +32,7 @@ class ContractorSignupRequestAdmin(admin.ModelAdmin):
             user, created = User.objects.get_or_create(
                 email=app.email,
                 defaults={
-                    "username": app.email,  # keep it simple
+                    "username": app.email, 
                     "first_name": app.contact_name.split(" ")[0] if app.contact_name else "",
                     "is_active": True,
                 },
@@ -64,7 +64,8 @@ class ContractorSignupRequestAdmin(admin.ModelAdmin):
             # This URL name comes from django auth password reset confirm
             path = reverse("password_reset_confirm", kwargs={"uidb64": uidb64, "token": token})
             domain = request.get_host()
-            reset_link = f"https://{domain}{path}"
+            protocol = 'https' if request.is_secure() else 'http'
+            reset_link = f"{protocol}://{domain}{path}"
 
             subject = "You’ve been approved — set your password"
             message = (
