@@ -10,7 +10,7 @@ urlpatterns = [
     
     # My Apps 
     path("", include("marketplace.urls") ),
-    path("", include("onboarding.urls") ),
-    path("", include("contractorportal.urls") ),
+    path("onboarding/", include("onboarding.urls") ),
+    path("contractor/", include("contractorportal.urls") ),
 ]
 

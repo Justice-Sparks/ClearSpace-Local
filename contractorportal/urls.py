@@ -1,7 +1,6 @@
 from django.urls import path
-from .views import contractor_login, dashboard, portal_redirect
+from .views import dashboard
 
 urlpatterns = [
-    #path("contractors/login/", contractor_login, name="contractor_login"),
-    path("", dashboard, name="contractor_dashboard"),
-] 
+    path("contractor/dashboard/", dashboard, name="contractor_dashboard"),
+]
