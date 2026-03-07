@@ -160,3 +160,7 @@ AUTH_USER_MODEL = "contractorportal.User"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "contractor_dashboard"
 LOGOUT_REDIRECT_URL = "homepage"  
+
+
+# Resolving issues with reading the client's IP from REMOTE_ADDR, (it was empty because I'm behind a reverse proxy using Unix sockets)
+RATELIMIT_IP_META_KEY = os.environ.get("RATELIMIT_IP_META_KEY", None)
