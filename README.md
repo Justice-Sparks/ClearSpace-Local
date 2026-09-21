@@ -2,7 +2,7 @@ ClearSpace Local
 
 A lead-generation marketplace connecting Colorado Springs contractors and tradespeople with local customers. Contractors apply through an onboarding flow, an admin reviews and approves them, and approved contractors receive an emailed link to set their password and access their dashboard.
 
-Status: Not currently deployed. It previously ran in production on AWS (architecture below).
+Status: Not currently deployed. It previously ran in production at www.clearspace-local.com on AWS (architecture below).
 
 Tech stack
 Backend: Python, Django 6.0
@@ -38,7 +38,7 @@ Variable	Purpose
 DJANGO_SECRET_KEY	Django secret key (required in production)
 DJANGO_DEBUG	True or False
 DJANGO_ALLOWED_HOSTS	Comma-separated hostnames
-CSRF_TRUSTED_ORIGINS	Comma-separated origins, e.g. https://example.com
+CSRF_TRUSTED_ORIGINS	Comma-separated origins, e.g. https://www.clearspace-local.com
 DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT	PostgreSQL connection; all but port must be set to use Postgres
 RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY	Google reCAPTCHA v3 keys
 EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, DEFAULT_FROM_EMAIL	Outgoing mail (Gmail SMTP)
